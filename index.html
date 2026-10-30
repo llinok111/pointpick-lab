@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>pointpick-lab — octree ray picking for point clouds</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: #07090f; color: #e8eef7; font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; }
+  #view { display: block; width: 100vw; height: 100vh; }
+  .panel { position: fixed; background: rgba(10, 14, 22, 0.82); border: 1px solid #1d2a3d; border-radius: 10px; padding: 12px 14px; backdrop-filter: blur(8px); }
+  #hud { top: 16px; left: 16px; min-width: 260px; }
+  #hud h1 { margin: 0 0 2px; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #8fb4d9; font-weight: 600; }
+  #build { color: #6f8aa6; font-size: 11px; margin-bottom: 10px; }
+  dl { display: grid; grid-template-columns: 88px 1fr; gap: 3px 10px; margin: 0; }
+  dt { color: #6f8aa6; }
+  dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; }
+  .good { color: #57e6a8; }
+  .bad { color: #ff8a7a; }
+  #help { bottom: 16px; left: 16px; color: #7f97b0; font-size: 11px; }
+  kbd { border: 1px solid #2c3d54; border-bottom-width: 2px; border-radius: 4px; padding: 0 5px; color: #cfe2f5; }
+  #title { position: fixed; right: 16px; top: 16px; text-align: right; }
+  #title strong { display: block; font-size: 15px; letter-spacing: 0.02em; }
+  #title span { color: #5f7a95; font-size: 11px; }
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<canvas id="view"></canvas>
+
+<div id="title"><strong>pointpick-lab</strong><span>250k points · octree ray pick</span></div>
+
+<div id="hud" class="panel">
+  <h1>pick probe</h1>
+  <div id="build">loading…</div>
+  <dl>
+    <dt>mode</dt><dd id="mode" class="good">octree</dd>
+    <dt>pick time</dt><dd id="pick">—</dd>
+    <dt>point index</dt><dd id="index">—</dd>
+    <dt>distance</dt><dd id="dist">—</dd>
+  </dl>
+</div>
+
+<div id="help" class="panel">
+  hover to pick · drag to orbit · scroll to zoom · <kbd>B</kbd> brute-force toggle · <kbd>R</kbd> reset
+</div>
+
+<script type="module" src="./main.js"></script>
+</body>
+</html>

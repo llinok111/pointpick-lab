@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "date": "2026-10-30T10:29:48.171Z",
+    "node": "v24.19.0",
+    "platform": "linux/x64",
+    "cpu": "AMD EPYC 7K62 48-Core Processor",
+    "cores": 4,
+    "memGB": 3.6,
+    "points": 250000,
+    "raysPerRep": 400,
+    "reps": 7,
+    "warmup": 1,
+    "radius": 0.08,
+    "sampleSha256": "098999f22e705b85f2d783bf53a3f00de55906475e170e7bc7929e3e40511d31",
+    "checksum": 96.084
+  },
+  "octree": {
+    "nodes": 57981,
+    "leaves": 50751
+  },
+  "build_ms": {
+    "min": 64.748,
+    "median": 83.722,
+    "p95": 98.972,
+    "stddev": 13.999,
+    "relStddev": 0.1697,
+    "mean": 82.481
+  },
+  "cold_start_ms": {
+    "octree": 1.256,
+    "brute": 9.452
+  },
+  "pick": {
+    "octree": {
+      "min": 15.337,
+      "median": 15.943,
+      "p95": 16.694,
+      "stddev": 0.494,
+      "relStddev": 0.0309,
+      "mean": 15.995,
+      "per_ray_us": 39.858
+    },
+    "brute": {
+      "min": 411.25,
+      "median": 412.915,
+      "p95": 414.726,
+      "stddev": 1.158,
+      "relStddev": 0.0028,
+      "mean": 412.708,
+      "per_ray_us": 1032.287
+    },
+    "speedup_median": 25.9,
+    "speedup_min": 26.81,
+    "hits": 392,
+    "agreement": "400/400"
+  }
+}
