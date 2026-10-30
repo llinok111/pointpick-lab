@@ -54,4 +54,5 @@ From [`bench/result.json`](bench/result.json) (node v24.19.0, AMD EPYC 7K62, 4 c
 - Static clouds only; there is no incremental insert/remove, so a moving cloud must be rebuilt (83.7 ms at 250k).
 - The radius is a world-space constant supplied by the caller; the page scales it with camera distance, the bench fixes it at 0.08.
 - Timings are single-process, single-thread on a shared 4-core VM; the ratio is stable, the absolute microseconds will move on other hardware.
+- The committed `data/cloud.bin` (3 MB) is the only large blob. In the sandbox used to build this repo, a plain clone stalled while transferring it, so verification used `--filter=blob:none` plus `node tools/gen-sample.mjs`, which reproduces the identical file (sha256 checked). Normal clones are unaffected.
 - The cloud is synthetic and clustered (85% blobs, 15% uniform background); uniformly random clouds give shallower trees and a smaller win.
